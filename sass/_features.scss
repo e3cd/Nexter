@@ -1,0 +1,34 @@
+.features {
+  grid-column: center-start / center-end;
+
+  margin: 15rem 0;
+
+  display: grid;
+  // grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(25rem, 1fr)
+  ); //auto-fit creates as many tracks based on the width we defined, in this case with the minmax(25rem, 1fr) -- replicates media query
+  grid-gap: 6rem;
+  align-items: start; // set the grid item to the start of grid cell -- start center end are the properties ----
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2.5rem;
+
+  &__icon {
+    //use fill for svg coloring
+    fill: $color-primary;
+    width: 4.5rem;
+    height: 4.5rem;
+    grid-row: 1 / span 2; //span spans the width of the icon/content, 1 / -1 does not work as it only applies for explicit grids. Grid rows are not defined in feature and are there for apart of the implicit grid
+    transform: translateY(-1rem);
+  }
+
+  &__text {
+    font-size: 1.7rem;
+  }
+}
