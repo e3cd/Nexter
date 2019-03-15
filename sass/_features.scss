@@ -11,6 +11,7 @@
   ); //auto-fit creates as many tracks based on the width we defined, in this case with the minmax(25rem, 1fr) -- replicates media query
   grid-gap: 6rem;
   align-items: start; // set the grid item to the start of grid cell -- start center end are the properties ----
+  //justify-items aligns items along the row axis -- align-items aligns items along the block column
 }
 
 .feature {
